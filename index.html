@@ -4,24 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>任蕊同学的哆啦A梦</title>
+    <title>Doraemon for 任蕊</title>
     <style>
         body {
             background-color: #87CEEB;
             font-family: 'Arial', sans-serif;
             text-align: center;
             color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
         }
 
         .doraemon {
-            width: 200px;
-            margin: 50px auto;
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
         }
 
         .heart {
             font-size: 2em;
             color: red;
             animation: heartbeat 1.5s infinite;
+            margin: 20px 0;
         }
 
         @keyframes heartbeat {
@@ -37,19 +48,47 @@
         }
 
         .message {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #f06;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c05;
+        }
+
+        #surprise {
+            display: none;
+            font-size: 1.2em;
             margin-top: 20px;
+            color: #f06;
         }
     </style>
 </head>
 
 <body>
-    <h1>任蕊同学的哆啦A梦</h1>
-    <img src="doraemon.webp" alt="Doraemon" class="doraemon">
-    <p class="heart">❤</p>
-    <div class="message">
-        <p>任师傅，希望你每天都开心，像 哆啦A梦 一样无忧无虑。</p>
-        <button onclick="showSurprise()">点击这里收获惊喜哦</button>
-        <p id="surprise" style="display:none;">路小飞现在好想你！❤</p>
+    <div class="container">
+        <h1>Doraemon for 任蕊</h1>
+        <img src="doraemon.webp" alt="Doraemon" class="doraemon" width="300px">
+        <p class="heart">❤</p>
+        <div class="message">
+            <p>任师傅祝你每天都开心，像 Doraemon 一样无忧无虑。</p>
+            <button onclick="showSurprise()">点击这里有惊喜哦</button>
+            <p id="surprise">路小飞现在很想你！❤</p>
+        </div>
     </div>
     <script>
         function showSurprise() {

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>任蕊同学的哆啦A梦</title>
+    <style>
+        body {
+            background-color: #87CEEB;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            color: #333;
+        }
+
+        .doraemon {
+            width: 200px;
+            margin: 50px auto;
+        }
+
+        .heart {
+            font-size: 2em;
+            color: red;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .message {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>任蕊同学的哆啦A梦</h1>
+    <img src="doraemon.webp" alt="Doraemon" class="doraemon">
+    <p class="heart">❤</p>
+    <div class="message">
+        <p>任师傅，希望你每天都开心，像 哆啦A梦 一样无忧无虑。</p>
+        <button onclick="showSurprise()">点击这里收获惊喜哦</button>
+        <p id="surprise" style="display:none;">路小飞现在好想你！❤</p>
+    </div>
+    <script>
+        function showSurprise() {
+            document.getElementById('surprise').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

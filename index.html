@@ -76,6 +76,12 @@
             margin-top: 20px;
             color: #f06;
         }
+
+        #countup {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
     </style>
 </head>
 
@@ -89,11 +95,40 @@
             <button onclick="showSurprise()">点击这里有惊喜哦</button>
             <p id="surprise">路小飞现在很想你！❤</p>
         </div>
+        <div id="countup">
+            <p>我们已经在一起了: <span id="timer"></span></p>
+        </div>
     </div>
     <script>
         function showSurprise() {
             document.getElementById('surprise').style.display = 'block';
         }
+
+        // Count-Up Timer
+        function countup() {
+            const startDate = new Date("2024-08-03T00:00:00").getTime(); // Set your start date here
+            const timer = document.getElementById('timer');
+
+            const interval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = now - startDate;
+
+                if (distance < 0) {
+                    clearInterval(interval);
+                    timer.innerHTML = "时间错误！";
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                timer.innerHTML = `${days}天 ${hours}小时 ${minutes}分钟 ${seconds}秒`;
+            }, 1000);
+        }
+
+        countup(); // Start the count-up timer
     </script>
 </body>
 
